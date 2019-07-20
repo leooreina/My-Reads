@@ -6,7 +6,7 @@ import SearchPage from './SearchPage'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
-class BooksApp extends Component {
+class MyReadsApp extends Component {
   state = {
     books: []
   }
@@ -30,8 +30,8 @@ class BooksApp extends Component {
   updateShelf = (movingBook, shelf) => {
     BooksAPI.update(movingBook, shelf).then(response => {
       movingBook.shelf = shelf
-      this.setState(pastState => ({
-        books: pastState.books
+      this.setState(passedState => ({
+        books: passedState.books
           .filter(book => book.id !== movingBook.id)
           .concat(movingBook)
       }))
@@ -58,9 +58,7 @@ class BooksApp extends Component {
           path='/'
           render={() => (
           <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
+            <Title />
             <BooksListContent // Here are the three shelfs (currently Reading, Want to Read and Read)
               books = {books} // This takes the books
               updateShelf = {this.updateShelf} // This takes the updateShelf method
@@ -76,4 +74,12 @@ class BooksApp extends Component {
   }
 }
 
-export default BooksApp
+function Title() {
+  return (
+    <div className="list-books-title">
+      <h1>MyReads</h1>
+    </div>
+  )
+}
+
+export default MyReadsApp

@@ -19,7 +19,8 @@ class SearchPage extends Component {
 
   // function to update the results according to the event (that is passed by the form)
   updateBooks = (event) => {
-    const query = event.target.value
+    let value = event.target.value
+    const query = value
     this.setState({ query })
 
     // if the form has any value, show the results for that search
@@ -40,7 +41,10 @@ class SearchPage extends Component {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <Link to='/' className='close-search'> // back to the main page
+          <Link
+            to='/'
+            className='close-search'
+          > // back to the main page
             Close
           </Link>
           <div className="search-books-input-wrapper">
@@ -56,12 +60,7 @@ class SearchPage extends Component {
             <div>
               <ol className="books-grid">
                 {searchedBooks.map(book => (
-                  <Book
-                    book={book}
-                    books={books}
-                    key={book.id}
-                    updateShelf={updateShelf}
-                  />
+                  <Book book={book} books={books} key={book.id} updateShelf={updateShelf} />
                 ))}
               </ol>
             </div>

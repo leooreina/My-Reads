@@ -5,10 +5,19 @@ import BookGrid from './BookGrid'
 function BooksListContent(props) {
   const { books, updateShelf } = props;
   const booksGrid = [
-    { status: 'currentlyReading', title: 'Currently Reading' },
-    { status: 'wantToRead', title: 'Want To Read' },
-    { status: 'read', title: 'Read' }
-  ];
+    {
+      status: 'currentlyReading',
+      title: 'Currently Reading'
+    },
+    {
+      status: 'wantToRead',
+      title: 'Want To Read'
+    },
+    {
+      status: 'read',
+      title: 'Read'
+    }
+  ]
 
   return (
     <div className="list-books-content">

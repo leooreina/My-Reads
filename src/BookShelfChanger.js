@@ -12,20 +12,22 @@ class BookShelfChanger extends Component {
   /* Receive what option has been marked (event) and update the
   book shelf according to this
   */
-  changeShelf = event => {
-    this.props.updateShelf(this.props.book, event.target.value)
+  changeShelf = (event) => {
+    let props = this.props
+    let value = event.target.value
+    props.updateShelf(props.book, value)
   }
 
   render() {
+    let defaultShelf = 'none'; // default shelf receive 'none' as value
     const { book, books } = this.props
 
-    let defaultShelf = 'none'; // default shelf receive 'none' as value
-
     /* If the option marked is the same it's in*/
-    for (let bookItem of books) {
+    let bookItem;
+    for (bookItem of books) {
       if (bookItem.id === book.id) {
         defaultShelf = bookItem.shelf
-        break;
+        
       }
     }
 
