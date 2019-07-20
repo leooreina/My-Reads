@@ -4,10 +4,11 @@ This is the starter template for the final assessment project for Udacity's Reac
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
 
-## TL;DR
+## How to run the project in your machine
 
 To get started developing right away:
 
+* you need node package manager (npm) installed
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
@@ -71,10 +72,11 @@ update(book, shelf)
 Method Signature:
 
 ```js
-search(query)
+search(query, maxResults)
 ```
 
 * query: `<String>`
+* maxResults: `<Number>`
 * Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
 * These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
 
