@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import BookShelfChanger from './BookShelfChanger'
 
-function Book(props) {
+const Book = (props) => {
   const { book, books, updateShelf } = props;
   const title = book.title ? book.title : 'No title available';
   const bookCover =

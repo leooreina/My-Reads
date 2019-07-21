@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
+import { Throttle } from 'react-throttle'
 
 class SearchPage extends Component {
   // An array of books and a function to update the shelf are required
@@ -48,11 +49,11 @@ class SearchPage extends Component {
             Close
           </Link>
           <div className="search-books-input-wrapper">
-            <input
-              type="text"
-              placeholder="Search by title or author"
-              value={query}
-              onChange={this.updateBooks}/>
+            <Throttle time="500" handler="onChange" value={query}>
+              <input
+                placeholder="Search by title or author"
+                onChange={this.updateBooks}/>
+            </Throttle>
           </div>
         </div>
         <div className="search-books-results">

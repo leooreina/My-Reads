@@ -27,14 +27,14 @@ class BookShelfChanger extends Component {
     for (bookItem of books) {
       if (bookItem.id === book.id) {
         defaultShelf = bookItem.shelf
-        
+
       }
     }
 
     return (
       <div className="book-shelf-changer">
         <select onChange={this.changeShelf} defaultValue={defaultShelf}> // call changeShelf method on change
-          <option value="none" disabled>Move to...</option>
+          <option value="moveto" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>
           <option value="read">Read</option>

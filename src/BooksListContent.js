@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import BookGrid from './BookGrid'
 
-function BooksListContent(props) {
+const BooksListContent = (props) => {
   const { books, updateShelf } = props;
   const booksGrid = [
     {
